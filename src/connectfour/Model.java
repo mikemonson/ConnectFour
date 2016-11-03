@@ -18,16 +18,16 @@ import java.util.ArrayList;
  */
 class Model {
 
-    private Integer numToWin = 4;
+    private Integer numToWin ;
     private Integer turnCount = 1;
     public Integer[][] gameBoard;
-    private Integer boardSize = 7;
+    private Integer boardSize ;
     private int lastMoveRowIndex;
     private int lastMoveColumnIndex;
     private int playersTurn = 1;
 
     public Model(Integer theBoardSize, Integer numToWin) {
-        boardSize = theBoardSize;
+        this.boardSize = theBoardSize;
         this.numToWin = numToWin;
         turnCount = 1;
         gameBoard = new Integer[boardSize][boardSize];
@@ -67,6 +67,7 @@ class Model {
                 turnCount++;
                 lastMoveColumnIndex = column;
                 lastMoveRowIndex = i;
+                printGameArray();
                 return true;
 
             }
@@ -74,6 +75,7 @@ class Model {
         }
 
         System.out.println("Invalid Move");
+        printGameArray();
         return false;
 
     }
@@ -95,7 +97,7 @@ class Model {
 
     public Integer checkForWin() {
 
-        if (checkColumnsForWin(1) || checkRowsForWin(1) || checkDiagForWin(1)) {
+        if (checkColumnsForWin(1) || checkRowsForWin(1) || checkDiagForWin(1) ) {
             System.out.println("Winner: Player 1");
             return 1;
         }
@@ -103,8 +105,9 @@ class Model {
         if (checkColumnsForWin(2) || checkRowsForWin(2) || checkDiagForWin(2)) {
             System.out.println("Winner: Player 2");
 
-            return 2;
-        } else {
+            return 5;
+        } 
+        else {
             return 0;
         }
 

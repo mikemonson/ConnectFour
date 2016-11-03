@@ -38,8 +38,10 @@ public class View extends Application {
     GridPane dropCheckersPane = new GridPane();
     Presenter presenter;
     Circle dropButtonTemplate = new Circle(50);
-    GridPane gameStatus = new GridPane();
+    VBox gameStatus = new VBox();
     TextField gameStatusText = new TextField("Lets Play Connect Four!");
+    Button resetButton = new Button("Reset");
+    
 
     public View() {
     }
@@ -90,6 +92,7 @@ public class View extends Application {
         gameStatus.setAlignment(Pos.CENTER);
         gameStatus.setPadding(new Insets(40));
         gameStatus.getChildren().add(gameStatusText);
+        gameStatus.getChildren().add(resetButton);
         root.setRight(gameStatus);
         checkersPane.setGridLinesVisible(true);
         root.setTop(dropCheckersPane);
@@ -118,6 +121,10 @@ public class View extends Application {
     
     public void displayWinnerText(Integer player) {
         gameStatusText.setText("Winner! Player "+ player);
+    }
+
+    void updateGameStatusInvalidMove() {
+        gameStatusText.setText("Sorry, Invalid Move");
     }
 
 }
