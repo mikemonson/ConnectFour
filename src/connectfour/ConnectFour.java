@@ -6,17 +6,7 @@
 package connectfour;
 
 import java.util.List;
-import javafx.scene.paint.Paint;
 import javafx.application.Application;
-import javafx.scene.paint.Color;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 /**
@@ -41,7 +31,7 @@ public class ConnectFour extends Application {
         else {
             //if no arguments are passed into the jar, game model defaults to 7x7 board and 4 to win
             x = 6;
-            y=3;
+            y=2;
         }
         
         

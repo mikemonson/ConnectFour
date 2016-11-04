@@ -1,4 +1,4 @@
-1.  Pass in command line arguments
-2.  Add reset button
+
+1.  Add reset button
 
 
